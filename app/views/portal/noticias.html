@@ -1,0 +1,17 @@
+{% extends 'portal/layout.html' %}
+
+{% block portal %}
+    <h2>Todas as Noticias</h2>
+    
+{% for postagem in postagens %}
+
+<h2>{{ postagem.titulo }}</h2>
+<a href="noticias/show/id={{postagem.id}}">
+    <p>{{ postagem.conteudo[:100] }}</p>
+</a>
+
+
+{% endfor %}
+
+
+{% endblock %}
