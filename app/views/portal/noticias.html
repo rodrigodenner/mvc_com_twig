@@ -6,7 +6,9 @@
 {% for postagem in postagens %}
 
 <h2>{{ postagem.titulo }}</h2>
-<a href="noticias/show/id={{postagem.id}}">
+<a href="noticias/show/news/{{ postagem.id }}">
+
+    
     <p>{{ postagem.conteudo[:100] }}</p>
 </a>
 

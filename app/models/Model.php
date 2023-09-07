@@ -23,10 +23,14 @@ abstract class Model {
 	public function find($id) {
 		$sql = "SELECT * FROM {$this->table} WHERE id = :id";
 		$list = $this->connection->prepare($sql);
-		$list->bindValue(':id', $id, \PDO::PARAM_INT);
+		
+		$list->bindParam(':id', $id);
+		
 		$list->execute();
-	
+		
 		return $list->fetch();
+		var_dump($list);
+		
 	}
 	
 
